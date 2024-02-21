@@ -1,0 +1,76 @@
+.News {
+    position: relative;
+    padding: 1.5rem auto;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    height: calc(100vh - 35px);
+    overflow: hidden;
+}
+
+.News>header {
+    color: #282c34;
+    color: #3f5582;
+    background-color: #dbe0e9;
+    border-bottom: 1px solid #dadfe9;
+    padding: 0 1rem;
+}
+
+.News h2 {
+    text-align: center;
+    margin: 0 auto;
+    padding: 0.25rem 1rem;
+    width: 100%;
+    color: purple;
+}
+
+.News-menu {
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    justify-items: center;
+    padding: 1rem;
+    gap: 0.3rem;
+
+}
+
+.News-menu button {
+    border: 1px solid #3f5582;
+    background-color: #3f5582;
+    color: #fff;
+    font-weight: 600;
+    padding: 0.6rem 1.2rem;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.37s ease-in-out;
+}
+
+.News-menu button.active,
+.News-menu button:hover {
+    color: aqua;
+    background-color: #1a2948;
+}
+
+.News-items-wrapper {
+    flex: 1 1 auto;
+    overflow-y: auto;
+    text-align: center;
+}
+
+
+.News-items {
+    /* flex: 1 1 auto;
+    border-top: 5px solid #dadfe9; */
+    /* overflow-y: auto; */
+    list-style: none;
+    text-align: left;
+    width: min(100%, 50em);
+    padding-inline: 1rem;
+    margin: 0 auto 1rem;
+
+}
+
+.News p.error {
+    color: tomato;
+}
