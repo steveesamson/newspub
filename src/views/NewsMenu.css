@@ -1,0 +1,43 @@
+.News-header {
+    color: #3f5582;
+    background-color: #dbe0e9;
+    border-bottom: 1px solid #dadfe9;
+    padding: 1rem 1rem 0.2rem;
+}
+
+.News-header h2 {
+    text-align: center;
+    font-size: 1.25rem;
+    margin: 0 auto;
+    padding: 0.25rem 1rem;
+    width: 100%;
+    color: #29576b;
+}
+
+.News-menu {
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    justify-items: center;
+    padding: 1rem;
+    gap: 0.3rem;
+
+}
+
+.News-menu button {
+    border: 1px solid #3f5582;
+    background-color: #3f5582;
+    color: #fff;
+    font-weight: 600;
+    padding: 0.6rem 1.2rem;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.37s ease-in-out;
+}
+
+.News-menu button.active,
+.News-menu button:hover {
+    color: aqua;
+    background-color: #1a2948;
+}

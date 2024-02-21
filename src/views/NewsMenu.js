@@ -1,5 +1,6 @@
 
 import { useCallback } from "react";
+import "./NewsMenu.css";
 
 // News Menu component
 // Handles city switching too
@@ -12,7 +13,7 @@ const Menu = ({ city, setCity }) => {
     }, [setCity]);
 
     return (
-        <header>
+        <header className="News-header">
             <h1>News Pub!</h1>
             <p>Get every news about your city here.</p>
             <section className="News-menu">

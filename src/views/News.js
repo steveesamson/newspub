@@ -12,6 +12,7 @@ const News = ({ defaultCity = "Waterloo" }) => {
     // Tracks city state
     const [city, setCity] = useState(defaultCity);
     // Tracks which news has its description displayed
+    // Only one news can have it's description displayed at a time.
     const [show, setShow] = useState(null);
 
     // Loads news based on city
@@ -26,14 +27,12 @@ const News = ({ defaultCity = "Waterloo" }) => {
             <Display when={!loading && !!error}>
                 <p className='error'>{error}</p>
             </Display>
-            <Display when={!loading && !!news}>
-
+            <Display when={!loading && !!news && news.length}>
                 <ul className='News-items'>
-                    {!!news && news.map((next, index) => <NewsItem news={next} show={show} setShow={setShow} key={next.title} />)}
+                    {!!news && news.map((next) => <NewsItem news={next} show={show} setShow={setShow} key={next.title} />)}
                 </ul>
-
             </Display>
-            <Display when={!loading && !news}>
+            <Display when={!loading && !!news && !news.length}>
                 <p>Sorry there are not news for {city}</p>
             </Display>
         </section>
