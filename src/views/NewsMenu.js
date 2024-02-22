@@ -3,14 +3,24 @@ import { useCallback } from "react";
 import "./NewsMenu.css";
 
 // News Menu component
-// Handles city switching too
+// Propagates city switching
+/**
+ * 
+ * @param {object} param0 shaped like { city, setCity} 
+ * @returns JSX.Element
+ */
 const Menu = ({ city, setCity }) => {
 
     // Create handler for button events
     const onCity = useCallback((e) => {
+
         const cityOfInterest = e.target.textContent.trim();
+        // No need to change if same
+        if (cityOfInterest === city) return;
+
+        // Propagate city change
         setCity(cityOfInterest);
-    }, [setCity]);
+    }, [setCity, city]);
 
     return (
         <header className="News-header">

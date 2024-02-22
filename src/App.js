@@ -2,6 +2,7 @@ import { Component } from 'react';
 import News from './views/News';
 import './App.css';
 
+// Main App component
 class App extends Component {
   render() {
     return (

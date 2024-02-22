@@ -3,7 +3,11 @@ import "./NewsItem.css";
 import Display from "./DisplayWhen";
 
 // Displays individual News item
-
+/**
+ * 
+ * @param {object} shaped as {news, show, setShow}
+ * @returns JSX.Element
+ */
 const NewsItem = ({ news: { author, title, publishedAt, description }, show, setShow }) => {
 
 

@@ -1,6 +1,14 @@
+
+// getNewsFor
+
 const NEWS_API_ENDPOINT = "https://newsapi.org";
 const NEWS_API_KEY = "8d77aa1e084d4f6daa3b08340693280a";
 
+/**
+ * Fetches news for the newsapi.org
+ * @param {string} city 
+ * @returns {data?, error?, status}
+ */
 
 export const getNewsFor = async (city) => {
     const endPoint = `${NEWS_API_ENDPOINT}/v2/everything?q=${city}&sortBy=popularity&apiKey=${NEWS_API_KEY}`;

@@ -1,10 +1,14 @@
 import { useEffect, useMemo, useState } from "react"
 import { getNewsFor } from "../api";
 
-// Hook to connect view to data
-// Uses getNewsFor from api/index.js
-// Return memo of {news, error, loading}
+/**  
+* Hook to connect view to data
+* Uses getNewsFor from api/index.js
+* @param {string} city
+* @return {news, error, loading} as memo
+*/
 export const useNewsFor = (city) => {
+    // States by hooks
     const [news, setNews] = useState(null);
     const [error, setError] = useState("");
     const [loading, setLoading] = useState(false);
