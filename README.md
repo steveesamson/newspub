@@ -1,70 +1,44 @@
-# Getting Started with Create React App
+# NewsPub
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## How-to
 
-## Available Scripts
+`NewsPub` is a React.js application that allows people to read news from the `https://newsapi.org` API. You interact with the application by choosing one of the provided city names and news for the selected city will be listed.
 
-In the project directory, you can run:
+The application further allows users to click on the `Read News` button of the respective news item in order to read the news details.
 
-### `npm start`
+The application allows for offline usage, especially for all previously visited cities while it handles network errors with appropriate error message.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+This application was created with the following:
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- `api/index.js:` This exposes `getNewsFor` that is responsible for fetching news
+  from `https://newsapi.org`, handling errors appropriately.
+- `hooks/useNewsFor.js:` This is a custom React hook that is responsible for bringing data into the `views/News.js` view. This hook uses `getNewsFor` to fulfill this objective.
+- `index.js:` This is the entry point of the application, it is responsible for mounting the application to the HTML DOM.
+- `App.js:` This component is the parent component for the whole application, it houses `views/News.js`.
+- `views/NewsMenu.js:` This component is responsible for managing `city` choices, which in turn gets propagated to the `views/News.js` component. It doubles as the page header too.
+- `views/News.js:` This is the main `News` component. It is responsible for contacting `hooks/useNewsFor.js` for data fetches. It maintains states about which `city` is being used, which `NewsItem` is displaying its details or not. It also notifies of `loading`, `error` or `success` states of the fetch process.
+- `views/NewsItem.js:` This is the component responsible for displaying individual `News` item. It triggers the event for the displaying or collapsing of the `News` detail based on `News` title.
+- `views/DisplayWhen.js:` This component is a utility component that helps in `hiding` or `showing` of other components that it wraps based on the props `when`, a `boolean` prop. Wrapped components are displayed when `when` evaluates to `true` but are hidden otherwise.
+- Additional stylesheet files like `index.css` `App.css` `views/News.css`, `views/NewsItem.css`, `views/NewsMenu.css` are also created to style the application.
+- News are provided by `https://newsapi.org` API.
+- Application runs at `http://localhost:3000/`
 
-### `npm test`
+## Setup
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Inside the application folder, run:
 
-### `npm run build`
+```bash
+npm install
+```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+The above will install all dependencies
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Run
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Inside the application folder, run:
 
-### `npm run eject`
+```bash
+npm start
+```
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+The above will start the application on the URL: http://localhost:3000. Browse the URL to view application. Follow the information on the How-to section above.
