@@ -1,7 +1,7 @@
 {
   "name": "newspub",
   "version": "0.1.0",
-  "private": true,
+  "description": "`NewsPub` is a React.js application that allows people to read news from the `https://newsapi.org` API. You interact with the application by choosing one of the provided city names and news for the selected city will be listed.",
   "dependencies": {
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^13.4.0",
@@ -11,6 +11,17 @@
     "react-scripts": "5.0.1",
     "web-vitals": "^2.1.4"
   },
+  "keywords": [
+    "javascript",
+    "news",
+    "publications",
+    "canada",
+    "rest",
+    "api",
+    "react",
+    "newsapi.org"
+  ],
+  "author": "Steve S. Samson <stevee.samson@gmail.com> (https://steveesamson.github.io/home/)",
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
