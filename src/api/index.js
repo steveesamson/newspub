@@ -2,7 +2,7 @@
 // getNewsFor
 
 const NEWS_API_ENDPOINT = "https://newsapi.org";
-const NEWS_API_KEY = "8d77aa1e084d4f6daa3b08340693280a";
+const NEWS_API_KEY = "<YOUR API KEY>";
 
 /**
  * Fetches news for the newsapi.org

@@ -20,7 +20,7 @@ This application was created with the following:
 - `views/NewsItem.js:` This is the component responsible for displaying individual `News` item. It triggers the event for the displaying or collapsing of the `News` detail based on `News` title.
 - `views/DisplayWhen.js:` This component is a utility component that helps in `hiding` or `showing` of other components that it wraps based on the props `when`, a `boolean` prop. Wrapped components are displayed when `when` evaluates to `true` but are hidden otherwise.
 - Additional stylesheet files like `index.css` `App.css` `views/News.css`, `views/NewsItem.css`, `views/NewsMenu.css` are also created to style the application.
-- News are provided by `https://newsapi.org` API.
+- News are provided by `https://newsapi.org` API. You need an account in order to get API KEY. This is required.
 - Application runs at `http://localhost:3000/`
 
 ## Setup
